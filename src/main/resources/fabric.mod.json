@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "modid",
+  "version": "${version}",
+  "name": "Example mod",
+  "description": "Description",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://example.org/",
+    "sources": "https://github.com/p1k0chu/fabric-mod-template-java"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "org.example.Main"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "org.example.client.MainClient"
+      }
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json",
+    {
+      "config": "modid.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=${minecraft_version}",
+    "java": ">=21",
+    "fabric-api": ">=${fabric_api_version}",
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}"
+  }
+}
